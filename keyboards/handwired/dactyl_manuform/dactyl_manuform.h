@@ -1,6 +1,8 @@
 #pragma once
 
-#ifdef KEYBOARD_handwired_dactyl_manuform_4x5
+#ifdef KEYBOARD_handwired_dactyl_manuform_custom
+    #include "custom.h"
+#elif KEYBOARD_handwired_dactyl_manuform_4x5
     #include "4x5.h"
 #elif KEYBOARD_handwired_dactyl_manuform_4x6
     #include "4x6.h"
