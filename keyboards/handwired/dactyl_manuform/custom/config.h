@@ -51,3 +51,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
+/* Tap dancing support */
+#define TAPPING_TERM 200
+
+/* Enables This makes it easier for fast typists to use dual-function keys */
+#define PERMISSIVE_HOLD
+
+/* Requires to both keys to be held for TAPPING_TERM */
+#define IGNORE_MOD_TAP_INTERRUPT
