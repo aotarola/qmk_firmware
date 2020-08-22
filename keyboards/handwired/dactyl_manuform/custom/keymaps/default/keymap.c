@@ -23,7 +23,10 @@ enum {
 
 #define TD_EPS TD(TD_ESC_CAPS)
 #define TH_SPF SFT_T(KC_SPC)
-#define TH_CTG RCTL_T(KC_GRV)
+#define TH_CTG LCTL_T(KC_GRV)
+#define TH_CTD RCTL_T(KC_DLR)
+#define TH_LMH LCMD_T(KC_HASH)
+#define TH_RMH RCMD_T(KC_ASTR)
 
 // Defines the keycodes used by our macros in process_record_user
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -32,8 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                                        KC_J,   KC_L,   KC_U,    KC_Y,   KC_SCLN, KC_EQL,  \
         KC_BSPC, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                                        KC_H,   KC_N,   KC_E,    KC_I,   KC_O,    KC_QUOT, \
         KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                        KC_K,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, TO(SYST),\
-                          KC_EXLM, KC_UNDS, KC_ENT,  TH_SPF, KC_LCMD,  TH_CTG,  KC_RCTL,  KC_RCMD, TH_SPF, KC_ENT, TG(MOUS),TG(NUMK), \
-                                                             TT(NVIM), KC_LOPT, KC_ROPT, TT(SYMB) \
+                          KC_EXLM, KC_UNDS, KC_ENT,  TH_SPF, TH_LMH,   TH_CTG,   TH_CTD,  TH_RMH, TH_SPF, KC_ENT, TG(MOUS),TG(NUMK), \
+                                                             TT(NVIM), KC_LOPT,  KC_ROPT, TT(SYMB) \
     ),
 
     [QWER] = LAYOUT(
