@@ -3,11 +3,13 @@
 // Tap Dance declarations
 enum {
     TD_ESC_CAPS,
+    TD_SCLN_COLN
 };
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
+    [TD_SCLN_COLN] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_COLN)
 };
 
 enum {
@@ -22,6 +24,7 @@ enum {
 };
 
 #define TD_EPS TD(TD_ESC_CAPS)
+#define TD_SCL TD(TD_SCLN_COLN)
 #define TH_SPF SFT_T(KC_SPC)
 #define TH_CTG LCTL_T(KC_GRV)
 #define TH_CTD RCTL_T(KC_DLR)
@@ -32,7 +35,7 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [CLMK] = LAYOUT(
         TD_EPS,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,   KC_7,   KC_8,    KC_9,   KC_0,    KC_MINS, \
-        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                                        KC_J,   KC_L,   KC_U,    KC_Y,   KC_SCLN, KC_EQL,  \
+        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                                        KC_J,   KC_L,   KC_U,    KC_Y,   TD_SCL, KC_EQL,  \
         KC_BSPC, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                                        KC_H,   KC_N,   KC_E,    KC_I,   KC_O,    KC_QUOT, \
         KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                        KC_K,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, TO(SYST),\
                           KC_EXLM, KC_UNDS, KC_ENT,  TH_SPF, TH_LMH,   TH_CTG,   TH_CTD,  TH_RMH, TH_SPF, KC_ENT, TG(MOUS),TG(NUMK), \
