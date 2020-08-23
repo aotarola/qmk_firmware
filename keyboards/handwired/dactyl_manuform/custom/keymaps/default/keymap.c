@@ -12,6 +12,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_SCLN_COLN] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_COLN)
 };
 
+// Layers declarations
 enum {
     CLMK = 0,
     QWER,
