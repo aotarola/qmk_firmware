@@ -32,9 +32,9 @@ MT: Mod-Tap
 #define TD_SCL TD(TD_SCLN_COLN)  // TD: ; & :
 #define MT_SPF SFT_T(KC_SPC)     // MT: SPACE & SHIFT
 #define MT_CTG LCTL_T(KC_GRV)    // MT: CONTROL & `
-#define MT_CTD RCTL_T(KC_DLR)    // MT: CONTROL & $ (it needs shift held)
-#define MT_LMH LCMT_T(KC_HASH)   // MT: CMD & # (it needs shift held)
-#define MT_RMH RCMT_T(KC_ASTR)   // MT: CMD & * (it needs shift held)
+#define MT_CTD RCTL_T(KC_DLR)    // MT: CONTROL & $ (with SHIFT held)
+#define MT_LMH LCMT_T(KC_HASH)   // MT: CMD & # (with SHIFT held)
+#define MT_RMH RCMT_T(KC_ASTR)   // MT: CMD & * (with SHIFT held)
 
 // Defines the keycodes used by our macros in process_record_user
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
