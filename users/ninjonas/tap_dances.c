@@ -37,18 +37,18 @@ static tap copy_paste_app_tap_state = {
 void copy_paste_app_finished (qk_tap_dance_state_t *state, void *user_data) {
   copy_paste_app_tap_state.state = cur_dance(state);
   switch (copy_paste_app_tap_state.state) {
-    case SINGLE_TAP: 
+    case SINGLE_TAP:
       tap_code16(LGUI(KC_V)); // Tap Cmd + V
       break;
-    case SINGLE_HOLD: 
+    case SINGLE_HOLD:
       tap_code16(LGUI(KC_C)); // Hold Cmd + C
       break;
-    case DOUBLE_TAP: 
+    case DOUBLE_TAP:
       SEND_STRING(SS_DOWN(X_LGUI) SS_TAP(X_SPACE) SS_UP(X_LGUI));
       wait_ms(250);
       SEND_STRING("line\n");
       break;
-    case TRIPLE_TAP: 
+    case TRIPLE_TAP:
       SEND_STRING(SS_DOWN(X_LGUI) SS_TAP(X_SPACE) SS_UP(X_LGUI));
       wait_ms(250);
       SEND_STRING("itunes\n");
@@ -70,16 +70,16 @@ static tap y_numpad_tap_state = {
 void y_numpad_finished (qk_tap_dance_state_t *state, void *user_data) {
   y_numpad_tap_state.state = cur_dance(state);
   switch (y_numpad_tap_state.state) {
-    case SINGLE_TAP: 
-      tap_code(KC_Y); 
+    case SINGLE_TAP:
+      tap_code(KC_Y);
       break;
-    case SINGLE_HOLD: 
+    case SINGLE_HOLD:
       register_code16(KC_Y);
       break;
-    case DOUBLE_TAP: 
+    case DOUBLE_TAP:
       if (layer_state_is(_NUMPAD)) {
         layer_off(_NUMPAD);
-      } else { 
+      } else {
         layer_on(_NUMPAD);
       }
       break;
@@ -89,7 +89,7 @@ void y_numpad_finished (qk_tap_dance_state_t *state, void *user_data) {
 void y_numpad_reset (qk_tap_dance_state_t *state, void *user_data) {
   switch (y_numpad_tap_state.state) {
     case SINGLE_HOLD:
-      unregister_code16(KC_Y); 
+      unregister_code16(KC_Y);
       break;
   }
   y_numpad_tap_state.state = 0;
@@ -105,6 +105,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_TAB_CTRLTAB]  = ACTION_TAP_DANCE_DOUBLE(KC_TAB, LCTL(KC_TAB)),
   [TD_GRV_CTRLGRV]  = ACTION_TAP_DANCE_DOUBLE(KC_GRV, LGUI(KC_GRV)),
   [TD_GUI_GUISPC]   = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, LGUI(KC_SPC)),
+  [TD_SCLN_COLN]    = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_COLN),
 
   // Advanced Tap Dances
   [TD_COPY_PASTE_APP] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, copy_paste_app_finished, copy_paste_app_reset, 300),

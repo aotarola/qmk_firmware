@@ -25,6 +25,7 @@ enum custom_tapdances{
   TD_GUI_GUISPC,
   TD_COPY_PASTE_APP,
   TD_Y_NUMPAD,
+  TD_SCLN_COLN,
 };
 
 #define T_ESC  TD(TD_ESC_CAPS)    // Tap for ESC, double tap for CAPSLOCK
@@ -35,3 +36,4 @@ enum custom_tapdances{
 #define T_GUI  TD(TD_GUI_GUISPC)  // Tap for Cmd, double tap for Cmd + Space
 #define T_CPAP TD(TD_COPY_PASTE_APP)  // Tap for paste, hold for copy, double tap for Line App
 #define T_Y    TD(TD_Y_NUMPAD)     // Tap for Y, double tap for NUMPAD
+#define T_SCL  TD(TD_SCLN_COLN)    // Tap for ;, double tap for :

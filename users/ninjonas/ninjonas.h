@@ -27,7 +27,7 @@
   #include "split_util.h"
 #endif
 
-#ifdef ENCODER_ENABLE   
+#ifdef ENCODER_ENABLE
 bool left_encoder_rotated;
 bool right_encoder_rotated;
 uint16_t encoder_rotated_timer;
@@ -46,6 +46,7 @@ uint16_t encoder_rotated_timer;
 #define K_CSCN LGUI(LCTL(LSFT(KC_4))) // Copy a portion of the screen to the clipboard
 #define K_CPRF LGUI(LSFT(KC_M)) //  Cmd + Shift + M. Used for switching Google Chrome profiles
 #define K_MDSH LSFT(LALT(KC_MINS))
+#define LCTL_GRV LCTL(KC_GRV)
 
 // Layer Keys
 #define LT_LOW LT(_LOWER, KC_ENT)
@@ -53,7 +54,9 @@ uint16_t encoder_rotated_timer;
 
 // Mod-Tap Keys
 #define MT_DEL MT(MOD_LALT | MOD_LSFT, KC_DEL)
-#define MT_EQL MT(MOD_RSFT, KC_EQL) 
+#define MT_CTZ CTL_T(KC_Z)      // MT: Z & CTRL
+#define MT_CTS RCTL_T(KC_SLSH)  // MT: / & CTRL
+#define MT_BSP SFT_T(KC_BSPC)   // MT: BACKSPACE & SHIFT
 
 // Layout blocks
 #define _____________________QWERTY_L1______________________ T_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T
@@ -62,7 +65,7 @@ uint16_t encoder_rotated_timer;
 
 #define _____________________QWERTY_R1______________________ T_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLS
 #define _____________________QWERTY_R2______________________ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT
-#define _____________________QWERTY_R3______________________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, MT_EQL
+#define _____________________QWERTY_R3______________________ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_EQL
 
 #define _____________________DVORAK_L1______________________ T_TAB, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y
 #define _____________________DVORAK_L2______________________ T_ESC, KC_A, KC_O, KC_E, KC_U, KC_I
@@ -70,32 +73,32 @@ uint16_t encoder_rotated_timer;
 
 #define _____________________DVORAK_R1______________________ KC_F, KC_G, KC_C, KC_R, KC_L, KC_BSLS
 #define _____________________DVORAK_R2______________________ KC_D, KC_H, KC_T, KC_N, KC_S, KC_SLSH
-#define _____________________DVORAK_R3______________________ KC_B, KC_M, KC_W, KC_V, KC_Z, MT_EQL
+#define _____________________DVORAK_R3______________________ KC_B, KC_M, KC_W, KC_V, KC_Z, KC_EQL
 
 #define _____________________COLEMAK_L1_____________________ T_TAB, KC_Q, KC_W, KC_F, KC_P, KC_G
 #define _____________________COLEMAK_L2_____________________ T_ESC, KC_A, KC_R, KC_S, KC_T, KC_D
-#define _____________________COLEMAK_L3_____________________ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B
+#define _____________________COLEMAK_L3_____________________ TT(_NUMPAD), MT_CTZ, KC_X, KC_C, KC_V, KC_B
 
-#define _____________________COLEMAK_R1_____________________ KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_BSLS
+#define _____________________COLEMAK_R1_____________________ KC_J, KC_L, KC_U, KC_Y, T_SCL, KC_BSLS
 #define _____________________COLEMAK_R2_____________________ KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT
-#define _____________________COLEMAK_R3_____________________ KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, MT_EQL
+#define _____________________COLEMAK_R3_____________________ KC_K, KC_M, KC_COMM, KC_DOT, MT_CTS, KC_EQL
 
 #define _____________________NUM_LEFT_______________________ T_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define _____________________NUM_RIGHT______________________ KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS
 
-#define _____________________FUNC_LEFT______________________ KC_F11, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5
+#define _____________________FUNC_LEFT______________________ KC_F11, KC_F1, KC_F2, KC_F3, T_CPAP, LCTL_GRV
 #define _____________________FUNC_RIGHT_____________________ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F12
 
 #define _____________________SYM_LEFT_______________________ KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC
 #define _____________________SYM_RIGHT______________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS
 
-#define _____________________LOWER_L1_______________________ M_XXX2, M_XXX3, _________MEDIA_1_________, K_CSCN
-#define _____________________LOWER_L2_______________________ M_XXX4, M_XXX5, _________MEDIA_2_________, XXXXXXX
-#define _____________________LOWER_L3_______________________ KC_LSFT, M_SHFT, _________MEDIA_3_________, T_LBRC
+#define _____________________LOWER_L1_______________________ M_XXX2, M_XXX3, XXXXXXX, KC_LCBR, KC_RCBR, K_CSCN
+#define _____________________LOWER_L2_______________________ M_XXX4, M_XXX5, XXXXXXX, KC_LPRN, KC_RPRN, KC_PIPE
+#define _____________________LOWER_L3_______________________ KC_LSFT, M_SHFT,XXXXXXX, KC_LBRC, KC_RBRC,XXXXXXX
 
 #define _____________________LOWER_R1_______________________ _______________NAV_1______________, XXXXXXX, K_MDSH
 #define _____________________LOWER_R2_______________________ _______________NAV_2______________, K_LOCK, XXXXXXX
-#define _____________________LOWER_R3_______________________ T_RBRC, KC_M, M_TERM, M_CODE, M_XXX1, M_PYNV
+#define _____________________LOWER_R3_______________________ XXXXXXX, KC_M, M_TERM, M_CODE, M_XXX1, M_PYNV
 
 #define _____________________ADJUST_L1______________________ M_MAKE, EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
@@ -136,8 +139,8 @@ uint16_t encoder_rotated_timer;
 #define _________MEDIA_3_________ XXXXXXX, KC_MRWD, KC__VOLDOWN
 
 #if defined(KEYBOARD_crkbd_rev1) || defined(KEYBOARD_kyria_rev1)
-  #define ________MOD_LEFT_________ T_GUI, KC_LCTL, LT_RAI
-  #define ________MOD_RIGHT________ LT_LOW, KC_BSPC, MT_DEL
+  #define ________MOD_LEFT_________ T_GUI, KC_LSFT, LT_RAI
+  #define ________MOD_RIGHT________ LT_LOW, MT_BSP, MT_DEL
 #else
   #define ________MOD_LEFT_________ KC_LALT, T_GUI, KC_LCTL
   #define ________MOD_RIGHT________ KC_BSPC, MT_DEL, T_CPAP
