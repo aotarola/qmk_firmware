@@ -86,15 +86,15 @@ uint16_t encoder_rotated_timer;
 #define _____________________NUM_LEFT_______________________ T_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define _____________________NUM_RIGHT______________________ KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS
 
-#define _____________________FUNC_LEFT______________________ KC_F11, KC_F1, KC_F2, KC_F3, T_CPAP, LCTL_GRV
-#define _____________________FUNC_RIGHT_____________________ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F12
+#define _____________________FUNC_LEFT______________________ KC_VOLD, KC_F1, KC_F2, KC_F12, T_CPAP, LCTL_GRV
+#define _____________________FUNC_RIGHT_____________________ XXXXXXX, KC_MUTE, KC_MPLY, KC_MPRV, KC_MNXT, KC_VOLU
 
 #define _____________________SYM_LEFT_______________________ KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC
 #define _____________________SYM_RIGHT______________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS
 
-#define _____________________LOWER_L1_______________________ M_XXX2, M_XXX3, XXXXXXX, KC_LCBR, KC_RCBR, K_CSCN
+#define _____________________LOWER_L1_______________________ M_XXX2, M_XXX3, XXXXXXX, KC_LCBR, KC_RCBR, XXXXXXX
 #define _____________________LOWER_L2_______________________ M_XXX4, M_XXX5, XXXXXXX, KC_LPRN, KC_RPRN, KC_PIPE
-#define _____________________LOWER_L3_______________________ KC_LSFT, M_SHFT,XXXXXXX, KC_LBRC, KC_RBRC,XXXXXXX
+#define _____________________LOWER_L3_______________________ KC_LSFT, M_SHFT,XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX
 
 #define _____________________LOWER_R1_______________________ _______________NAV_1______________, XXXXXXX, K_MDSH
 #define _____________________LOWER_R2_______________________ _______________NAV_2______________, K_LOCK, XXXXXXX
@@ -103,11 +103,11 @@ uint16_t encoder_rotated_timer;
 #define _____________________ADJUST_L1______________________ M_MAKE, EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-  #define _____________________ADJUST_L2______________________ M_VRSN, M_MALL, RGB_SPI, RGB_SAI, RGB_HUI, RGB_VAI
-  #define _____________________ADJUST_L3______________________ M_FLSH, XXXXXXX, RGB_SPD, RGB_SAD, RGB_HUD, RGB_VAD
+  #define _____________________ADJUST_L2______________________ XXXXXXX, XXXXXXX, RGB_SPI, RGB_SAI, RGB_HUI, RGB_VAI
+  #define _____________________ADJUST_L3______________________ XXXXXXX, XXXXXXX, RGB_SPD, RGB_SAD, RGB_HUD, RGB_VAD
 #else
-  #define _____________________ADJUST_L2______________________ M_VRSN, M_MALL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-  #define _____________________ADJUST_L3______________________ M_FLSH, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+  #define _____________________ADJUST_L2______________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+  #define _____________________ADJUST_L3______________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #endif
 
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
