@@ -86,7 +86,7 @@ uint16_t encoder_rotated_timer;
 #define _____________________NUM_LEFT_______________________ T_GRV, KC_1, KC_2, KC_3, KC_4, KC_5
 #define _____________________NUM_RIGHT______________________ KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS
 
-#define _____________________FUNC_LEFT______________________ KC_VOLD, KC_F1, KC_F2, KC_F12, T_CPAP, LCTL_GRV
+#define _____________________FUNC_LEFT______________________ KC_VOLD, KC_BRMD, KC_BRMU, KC_F12, T_CPAP, LCTL_GRV
 #define _____________________FUNC_RIGHT_____________________ XXXXXXX, KC_MUTE, KC_MPLY, KC_MPRV, KC_MNXT, KC_VOLU
 
 #define _____________________SYM_LEFT_______________________ KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC
