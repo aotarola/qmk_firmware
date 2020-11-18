@@ -100,7 +100,7 @@ uint16_t encoder_rotated_timer;
 #define _____________________LOWER_R2_______________________ _______________NAV_2______________, K_LOCK, XXXXXXX
 #define _____________________LOWER_R3_______________________ XXXXXXX, KC_M, M_TERM, M_CODE, M_XXX1, M_PYNV
 
-#define _____________________ADJUST_L1______________________ M_MAKE, EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _____________________ADJUST_L1______________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
   #define _____________________ADJUST_L2______________________ XXXXXXX, XXXXXXX, RGB_SPI, RGB_SAI, RGB_HUI, RGB_VAI
