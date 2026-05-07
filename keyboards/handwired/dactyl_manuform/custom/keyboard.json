@@ -13,7 +13,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": false,
-        "tap_dance": true
+        "tap_dance": false
     },
     "qmk": {
         "locking": {
